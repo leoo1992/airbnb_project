@@ -23,11 +23,12 @@ const bucket = 'dawid-booking-app';
 app.use(express.json());
 app.use(cookieParser());
 app.use('/uploads', express.static(__dirname+'/uploads'));
+//coneão front/back - end //////////////////////////////////
 app.use(cors({
   credentials: true,
-  origin: 'http://127.0.0.1:5173',
+  origin: 'http://localhost:5173',
 }));
-
+//coneão front/back - end //////////////////////////////////
 async function uploadToS3(path, originalFilename, mimetype) {
   const client = new S3Client({
     region: 'us-east-1',
